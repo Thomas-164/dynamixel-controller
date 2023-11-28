@@ -88,6 +88,10 @@ class DynamixelIO:
     def new_motor(self, dxl_id, json_file, protocol=2, control_table_protocol=None):
         """Returns a new DynamixelMotor object of a given protocol with a given control table"""
         return DynamixelMotor(dxl_id, self, json_file, protocol, control_table_protocol)
+    
+    def new_three_mxl_motor(self, dxl_id):
+        """Returns a new ThreeMxlMotor object of a given protocol with a given control table"""
+        return ThreeXmlMotor(dxl_id, self, pkg_resources.resource_filename(__name__, "DynamixelJSON/ThreeMxlMotor.json"))
 
     def new_ax12(self, dxl_id):
         """Returns a new DynamixelMotor object for an AX12"""
