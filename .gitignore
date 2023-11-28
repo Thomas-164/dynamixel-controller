@@ -160,3 +160,4 @@ cython_debug/
 #.idea/!/3mxlControlTable.h
 
 3mxlControlTable.h
+.idea/
