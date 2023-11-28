@@ -314,3 +314,40 @@ class DynamixelMotor:
     def torque_disable(self):
         """Disables motor torque"""
         self.write_control_table("Torque_Enable", 0)
+
+class ThreeXmlMotor:
+    """Creates the basis of individual motor objects"""
+
+    def __init__(self, dxl_id, dxl_io, json_file):
+        """Initializes a new DynamixelMotor object"""
+        # loads the JSON config file and gathers the appropriate control table.
+        fd = open(json_file)
+        config = json.load(fd)
+        fd.close()
+        config = config.get("Protocol_1")
+
+        # sets the motor object values based on inputs or JSON options.
+        self.CONTROL_TABLE_PROTOCOL = 1
+        self.dxl_id = dxl_id
+        self.dxl_io = dxl_io
+        self.PROTOCOL = 1
+        self.CONTROL_TABLE = config.get("Control_Table")
+
+    def write_control_table(self, data_name, value):
+        """Writes a value to a control table area of a specific name"""
+        self.dxl_io.write_control_table(self.PROTOCOL, self.dxl_id, value, self.CONTROL_TABLE.get(data_name)[0],
+                                        self.CONTROL_TABLE.get(data_name)[1])
+
+    def read_control_table(self, data_name):
+        """Reads the value from a control table area of a specific name"""
+        return self.dxl_io.read_control_table(self.PROTOCOL, self.dxl_id, self.CONTROL_TABLE.get(data_name)[0],
+                                              self.CONTROL_TABLE.get(data_name)[1])
+
+    def set_speed_mode(self):
+        self.write_control_table("M3XL_CONTROL_MODE", 1) # SPEED_MODE = 1
+
+    def set_speed(self, speed):
+        self.write_control_table("M3XL_DESIRED_SPEED_L", speed * 100)
+
+    def get_pos(self):
+        return self.read_control_table("M3XL_ANGLE_L")
