@@ -1,6 +1,7 @@
 import re
 import json
 
+
 def convert_header_to_json(header_file_path, json_file_path):
     # Regular expression to match C macro definitions
     macro_pattern = re.compile(r"#define\s+(\w+)\s+([0-9xXA-Fa-f]+)")
@@ -33,7 +34,8 @@ def convert_header_to_json(header_file_path, json_file_path):
     with open(json_file_path, 'w') as json_file:
         json.dump(json_data, json_file, indent=2)
 
+
 # Example usage
-header_file = '3mxlControlTable.h'
+header_file = '../3mxlControlTable.h'
 json_file = 'output_json_file.json'
 convert_header_to_json(header_file, json_file)
