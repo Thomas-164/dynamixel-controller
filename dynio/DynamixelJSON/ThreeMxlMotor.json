@@ -1,9 +1,12 @@
 {
   "Protocol_1": {
     "Control_Table": {
-      "M3XL_DESIRED_SPEED_L": [132, 2],
-      "M3XL_CONTROL_MODE": [54, 2],
-      "M3XL_ANGLE_L": [102, 2]
-    }
+      "DESIRED_SPEED_L": [132, 2],
+      "CONTROL_MODE": [54, 1],
+      "ANGLE_L": [102, 2],
+      "ID": [3, 1],
+      "STATUS_RETURN_LEVEL": [16, 1]
+          }
   }
 }
+
