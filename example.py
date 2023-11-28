@@ -4,11 +4,18 @@ from dynio.dynamixel_controller import DynamixelIO
 dxl_io = DynamixelIO('COM3', 921600)
 
 motor = dxl_io.new_three_mxl_motor(106)
+motor.set_mode_speed()
+motor.set_acceleration(1000)
+
+motor2 = dxl_io.new_three_mxl_motor(107)
+motor2.set_mode_speed()
+motor2.set_acceleration(1000)
 
 while True:
     command = input("> ")
+    motor.set_speed(int(command))
+    motor2.set_speed(int(command))
 
-    motor.write_control_table("DESIRED_SPEED", int(command)*100)
 
 # motor.set_speed_mode()
 

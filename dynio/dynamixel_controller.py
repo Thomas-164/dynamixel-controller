@@ -351,26 +351,31 @@ class ThreeMxlMotor:
                                               self.CONTROL_TABLE.get(data_name)[1])
 
     def set_mode_position(self):
-        self.write_control_table("CONTROL_MODE", 0)
+        self.write_control_table("M3XL_CONTROL_MODE", 0)
 
     def set_mode_speed(self):
-        self.write_control_table("CONTROL_MODE", 1)
+        self.write_control_table("M3XL_CONTROL_MODE", 1)
 
     def set_mode_current(self):
-        self.write_control_table("CONTROL_MODE", 2)
+        self.write_control_table("M3XL_CONTROL_MODE", 2)
 
     def set_mode_toque(self):
-        self.write_control_table("CONTROL_MODE", 3)
+        self.write_control_table("M3XL_CONTROL_MODE", 3)
 
     def set_mode_sea(self):
-        self.write_control_table("CONTROL_MODE", 4)
+        self.write_control_table("M3XL_CONTROL_MODE", 4)
 
     def set_mode_pwm(self):
-        self.write_control_table("CONTROL_MODE", 5)
-
+        self.write_control_table("M3XL_CONTROL_MODE", 5)
 
     def set_speed(self, speed):
-        self.write_control_table("M3XL_DESIRED_SPEED_L", speed * 100)
+        self.write_control_table("M3XL_DESIRED_SPEED", speed * 100)
+
+    def set_acceleration(self, acceleration):
+        self.write_control_table("M3XL_DESIRED_ACCEL", acceleration)
+
+    def set_acceleration_linear(self, acceleration):
+        self.write_control_table("M3XL_DESIRED_LINEAR_ACCEL", acceleration)
 
     def get_pos(self):
         return self.read_control_table("M3XL_ANGLE_L")
