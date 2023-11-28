@@ -7,13 +7,8 @@ motor = dxl_io.new_three_mxl_motor(106)
 
 while True:
     command = input("> ")
-    # Catch up arrow key
-    if command == '':
-        continue
-    if command == 'quit':
-        break
-    command, arg = command.split(' ')
-    motor.write_control_table(command, int(arg))
+
+    motor.write_control_table("DESIRED_SPEED", int(command)*100)
 
 # motor.set_speed_mode()
 

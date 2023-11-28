@@ -1,0 +1,81 @@
+{
+  "Protocol_1": {
+    "Control_Table": {
+      "NO_INSTRUCTION": [0, 1],
+      "PING": [1, 1],
+      "READ_DATA": [2, 1],
+      "WRITE_DATA": [3, 1],
+      "REG_WRITE": [4, 1],
+      "ACTION": [5, 1],
+      "RESET": [6, 1],
+      "SYNC_WRITE": [131, 1],
+
+      "STATUS": [168, 1],
+      "STATUS_INITIALIZED": [169, 1]
+
+      "STATUS_EEPROM_ERROR": [128, 1],
+      "STATUS_NOT_INITIALIZED": [129, 1],
+      "STATUS_EM_STOP_ERROR": [130, 1],
+      "STATUS_INIT_TIME_OUT_ERROR": [131, 1],
+      "STATUS_MAX_POS_ERROR": [132, 1],
+      "STATUS_MAX_TORQUE_ERROR": [133, 1],
+      "STATUS_MAX_CURRENT_ERROR": [134, 1],
+      "STATUS_MOTOR_STUCK_ERROR": [135, 1],
+      "STATUS_JOINT_STUCK_ERROR": [136, 1],
+      "STATUS_PROTOCOL_TIME_OUT_ERROR": [137, 1],
+
+      "STATUS_MOVING": [144, 1],
+      "STATUS_MOVE_DONE": [145, 1],
+      "STATUS_INITIALIZE_BUSY": [146, 1],
+      "STATUS_INIT_DONE": [147, 1],
+      "STATUS_POS_MODE_EXECUTING": [148, 1],
+      "STATUS_POS_MODE_DONE": [149, 1],
+      "STATUS_SPEED_MODE_EXECUTING": [150, 1],
+      "STATUS_SPEED_MODE_DONE": [151, 1],
+      "STATUS_TORQUE_MODE_EXECUTING": [152, 1],
+      "STATUS_TORQUE_MODE_DONE": [153, 1],
+      "STATUS_CURRENT_MODE_EXECUTING": [154, 1],
+      "STATUS_CURRENT_MODE_DONE": [155, 1],
+      "STATUS_SEA_MODE_EXECUTING": [156, 1],
+      "STATUS_SEA_MODE_DONE": [157, 1],
+      "STATUS_PWM_MODE_EXECUTING": [158, 1],
+      "STATUS_PWM_MODE_DONE": [159, 1],
+      "STATUS_SINUSOIDAL_POS_MODE_EXECUTING": [160, 1],
+      "STATUS_SINUSOIDAL_POS_MODE_DONE": [161, 1],
+      "STATUS_IDLE_STATE": [160, 1],
+
+      "STATUS_VOLTAGE": [96, 2],
+      "STATUS_CURRENT": [98, 2],
+      "STATUS_TORQUE": [100, 1],
+      "STATUS_ANGLE": [102, 2],
+      "STATUS_ANGULAR_RATE": [104, 2],
+      "STATUS_POSITION_32": [106, 4],
+      "STATUS_SPEED": [110, 2],
+      "STATUS_LINEAR_SPEED": [110, 2],
+
+      "ACTION_BUSY": [0, 1],
+      "ACTION_DONE": [255, 1],
+
+      "STATUS_RETURN_NONE": [0, 1],
+      "STATUS_RETURN_READ_DATA": [1, 1],
+      "STATUS_RETURN_ALL": [2, 1],
+
+      "BAUD_RATE": [50, 3],
+      "RETURN_DELAY_TIME": [53, 1],
+      "CONTROL_MODE": [54, 1],
+
+      "DESIRED_CURRENT": [112, 2],
+
+      "P_CURRENT": [114, 2],
+      "D_CURRENT": [116, 2],
+      "I_CURRENT": [118, 2],
+      "IL_CURRENT": [120, 2],
+      "PID_CURRENT_SCALE": [122, 2],
+
+      "DESIRED_SPEED": [132, 2],
+      "DESIRED_TORQUE": [134, 2],
+
+    }
+  }
+}
+

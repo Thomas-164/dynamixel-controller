@@ -20,6 +20,7 @@ from dynamixel_sdk import *
 import json
 import pkg_resources
 from deprecation import deprecated
+from dataclasses import dataclass
 
 
 class DynamixelIO:
@@ -88,10 +89,11 @@ class DynamixelIO:
     def new_motor(self, dxl_id, json_file, protocol=2, control_table_protocol=None):
         """Returns a new DynamixelMotor object of a given protocol with a given control table"""
         return DynamixelMotor(dxl_id, self, json_file, protocol, control_table_protocol)
-    
+
     def new_three_mxl_motor(self, dxl_id):
         """Returns a new ThreeMxlMotor object of a given protocol with a given control table"""
-        return ThreeXmlMotor(dxl_id, self, pkg_resources.resource_filename(__name__, "DynamixelJSON/ThreeMxlMotor.json"))
+        return ThreeMxlMotor(dxl_id, self,
+                             pkg_resources.resource_filename(__name__, "DynamixelJSON/3mxl.json"))
 
     def new_ax12(self, dxl_id):
         """Returns a new DynamixelMotor object for an AX12"""
@@ -319,7 +321,8 @@ class DynamixelMotor:
         """Disables motor torque"""
         self.write_control_table("Torque_Enable", 0)
 
-class ThreeXmlMotor:
+
+class ThreeMxlMotor:
     """Creates the basis of individual motor objects"""
 
     def __init__(self, dxl_id, dxl_io, json_file):
@@ -347,8 +350,24 @@ class ThreeXmlMotor:
         return self.dxl_io.read_control_table(self.PROTOCOL, self.dxl_id, self.CONTROL_TABLE.get(data_name)[0],
                                               self.CONTROL_TABLE.get(data_name)[1])
 
-    def set_speed_mode(self):
-        self.write_control_table("M3XL_CONTROL_MODE", 1) # SPEED_MODE = 1
+    def set_mode_position(self):
+        self.write_control_table("CONTROL_MODE", 0)
+
+    def set_mode_speed(self):
+        self.write_control_table("CONTROL_MODE", 1)
+
+    def set_mode_current(self):
+        self.write_control_table("CONTROL_MODE", 2)
+
+    def set_mode_toque(self):
+        self.write_control_table("CONTROL_MODE", 3)
+
+    def set_mode_sea(self):
+        self.write_control_table("CONTROL_MODE", 4)
+
+    def set_mode_pwm(self):
+        self.write_control_table("CONTROL_MODE", 5)
+
 
     def set_speed(self, speed):
         self.write_control_table("M3XL_DESIRED_SPEED_L", speed * 100)
