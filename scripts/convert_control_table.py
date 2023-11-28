@@ -43,6 +43,6 @@ def convert_header_to_json(header_file_path, json_file_path):
 
 
 # Example usage
-header_file = '../3mxlControlTable.h'
+header_file = '3mxlControlTable.h'
 json_file = '../dynio/DynamixelJSON/3mxl.json'
 convert_header_to_json(header_file, json_file)
