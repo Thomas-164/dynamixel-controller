@@ -123,48 +123,6 @@ class DynamixelIO:
                               pkg_resources.resource_filename(__name__, "DynamixelJSON/MX106.json"),
                               protocol=protocol, control_table_protocol=control_table_protocol)
 
-    # the following functions are deprecated and will be removed in version 1.0 release. They have been restructured
-    # to continue to function for the time being, but are the result of an older system of JSON config files which
-    # initially stored less information about each motor, causing a different initialization function to be needed
-    # for each version of the motor per protocol.
-
-    @deprecated('0.8', '1.0', details="Use new_ax12() instead")
-    def new_ax12_1(self, dxl_id):
-        """Returns a new DynamixelMotor object for an AX12"""
-        return DynamixelMotor(dxl_id, self,
-                              pkg_resources.resource_filename(__name__, "DynamixelJSON/AX12.json"))
-
-    # protocol 2 MX motors all use the same control table and could be initialized with the same control table layout,
-    # but this decreases readability and should be called with the specific motor being used instead.
-    @deprecated('0.8', '1.0', details="Use the specific new motor function instead")
-    def new_mx_2(self, dxl_id):
-        """Returns a new DynamixelMotor object of a given protocol for an MX series"""
-        return DynamixelMotor(dxl_id, self,
-                              pkg_resources.resource_filename(__name__, "DynamixelJSON/MX64.json"), 2)
-
-    @deprecated('0.8', '1.0', details="Use new_mx12() instead")
-    def new_mx12_1(self, dxl_id):
-        """Returns a new DynamixelMotor object for an MX12"""
-        return DynamixelMotor(dxl_id, self,
-                              pkg_resources.resource_filename(__name__, "DynamixelJSON/MX12.json"))
-
-    @deprecated('0.8', '1.0', details="Use new_mx28() instead")
-    def new_mx28_1(self, dxl_id):
-        """Returns a new DynamixelMotor object for an MX28"""
-        return self.new_mx12_1(dxl_id)
-
-    @deprecated('0.8', '1.0', details="Use new_mx64() instead")
-    def new_mx64_1(self, dxl_id):
-        """Returns a new DynamixelMotor object for an MX64"""
-        return DynamixelMotor(dxl_id, self,
-                              pkg_resources.resource_filename(__name__, "DynamixelJSON/MX64.json"))
-
-    @deprecated('0.8', '1.0', details="Use new_mx106() instead")
-    def new_mx106_1(self, dxl_id):
-        """Returns a new DynamixelMotor object for an MX106"""
-        return DynamixelMotor(dxl_id, self,
-                              pkg_resources.resource_filename(__name__, "DynamixelJSON/MX106.json"))
-
 
 class DynamixelMotor:
     """Creates the basis of individual motor objects"""
