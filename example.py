@@ -6,12 +6,14 @@ dxl_io = DynamixelIO('COM3', 921600)
 
 motor = dxl_io.new_three_mxl_motor(106)
 motor.set_velocity_mode()
-motor.set_acceleration(5)
-motor.set_current(1)
+motor.set_acceleration(1000)
+motor.start_heartbeat()
+# motor.set_current(1)
 motor2 = dxl_io.new_three_mxl_motor(107)
 motor2.set_velocity_mode()
-motor2.set_acceleration(5)
-motor2.set_current(1)
+motor2.set_acceleration(1000)
+motor2.start_heartbeat()
+# motor2.set_current(1)
 
 
 def get_status():

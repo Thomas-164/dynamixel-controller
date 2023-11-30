@@ -20,7 +20,7 @@ from dynamixel_sdk import *
 import json
 import pkg_resources
 from deprecation import deprecated
-from dataclasses import dataclass
+import threading
 
 
 class DynamixelIO:
@@ -350,6 +350,18 @@ class ThreeMxlMotor:
         return self.dxl_io.read_control_table(self.PROTOCOL, self.dxl_id, self.CONTROL_TABLE.get(data_name)[0],
                                               self.CONTROL_TABLE.get(data_name)[1])
 
+    def send_heartbeat(self):
+        """Method to send a heartbeat every second."""
+        while True:
+            self.write_control_table("NO_INSTRUCTION", 1)
+            time.sleep(1)
+
+    def start_heartbeat(self):
+        """Starts the heartbeat thread."""
+        heartbeat_thread = threading.Thread(target=self.send_heartbeat)
+        heartbeat_thread.daemon = True  # This ensures that the thread will close when the main program exits
+        heartbeat_thread.start()
+
     # -- SET COMMANDS --
 
     def set_velocity_mode(self):
@@ -384,10 +396,10 @@ class ThreeMxlMotor:
         self.write_control_table("M3XL_CONTROL_MODE", 5)
 
     def set_velocity(self, velocity):
-        self.write_control_table("M3XL_DESIRED_SPEED", velocity)
+        self.write_control_table("M3XL_DESIRED_SPEED", velocity * 100)
 
     def set_velocity_linear(self, velocity):
-        self.write_control_table("M3XL_DESIRED_LINEAR_SPEED", velocity)
+        self.write_control_table("M3XL_DESIRED_LINEAR_SPEED", velocity * 100)
 
     def set_acceleration(self, acceleration):
         self.write_control_table("M3XL_DESIRED_ACCEL", acceleration)
@@ -450,4 +462,3 @@ class ThreeMxlMotor:
 
     def get_velocity(self):
         return self.read_control_table("M3XL_SPEED")
-
