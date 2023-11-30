@@ -61,78 +61,6 @@
         1,
         1
       ],
-      "POSITION_MODE": [
-        0,
-        1
-      ],
-      "SPEED_MODE": [
-        1,
-        1
-      ],
-      "CURRENT_MODE": [
-        2,
-        1
-      ],
-      "TORQUE_MODE": [
-        3,
-        1
-      ],
-      "SEA_MODE": [
-        4,
-        1
-      ],
-      "PWM_MODE": [
-        5,
-        1
-      ],
-      "INDEX_INIT": [
-        6,
-        1
-      ],
-      "EXTERNAL_INIT": [
-        7,
-        1
-      ],
-      "ZERO_SPEED_INIT": [
-        8,
-        1
-      ],
-      "SEA_INIT": [
-        9,
-        1
-      ],
-      "MANUAL_INIT": [
-        10,
-        1
-      ],
-      "TIME_OUT_INIT": [
-        11,
-        1
-      ],
-      "STOP_MODE": [
-        12,
-        1
-      ],
-      "HOME_SWITCH_AND_INDEX_INIT": [
-        13,
-        1
-      ],
-      "CURRENT_POS_AND_SPEED_MODE": [
-        14,
-        1
-      ],
-      "START_UP_MODE": [
-        15,
-        1
-      ],
-      "SINUSOIDAL_POSITION_MODE": [
-        16,
-        1
-      ],
-      "TEST_MODE": [
-        17,
-        1
-      ],
       "M3XL_NO_ERROR": [
         "0B00000000",
         1
@@ -365,110 +293,6 @@
         16,
         2
       ],
-      "BAUD_RATE": [
-        4,
-        2
-      ],
-      "RETURN_DELAY_TIME": [
-        5,
-        1
-      ],
-      "CW_ANGLE_LIMIT": [
-        6,
-        2
-      ],
-      "CCW_ANGLE_LIMIT": [
-        8,
-        2
-      ],
-      "LIMIT_VOLTAGE_LOW": [
-        12,
-        1
-      ],
-      "MAX_TORQUE": [
-        14,
-        2
-      ],
-      "STATUS_RETURN_LEV": [
-        16,
-        2
-      ],
-      "ALARM_LED": [
-        17,
-        1
-      ],
-      "ALARM_SHUTDOWN": [
-        18,
-        1
-      ],
-      "TORQUE_ENABLE": [
-        24,
-        1
-      ],
-      "LED": [
-        25,
-        1
-      ],
-      "CW_COMPILANCE_MARGIN": [
-        26,
-        1
-      ],
-      "CCW_COMPILANCE_MARGIN": [
-        27,
-        1
-      ],
-      "CW_COMPILANCE_SLOPE": [
-        28,
-        1
-      ],
-      "CCW_COMPILANCE_SLOPE": [
-        29,
-        1
-      ],
-      "GOAL_POSITION": [
-        30,
-        2
-      ],
-      "MOVING_SPEED": [
-        32,
-        2
-      ],
-      "TORQUE_LIMIT": [
-        34,
-        2
-      ],
-      "PRESENT_POSITION": [
-        36,
-        2
-      ],
-      "PRESENT_SPEED": [
-        38,
-        2
-      ],
-      "PRESENT_LOAD": [
-        40,
-        2
-      ],
-      "PRESENT_VOLTAGE": [
-        42,
-        1
-      ],
-      "PRESENT_TEMP": [
-        43,
-        1
-      ],
-      "REGISTERED_INSTRUCTION": [
-        44,
-        1
-      ],
-      "MOVING": [
-        46,
-        1
-      ],
-      "MXL_LOCK": [
-        47,
-        1
-      ],
       "M3XL_BAUD_RATE": [
         50,
         2
@@ -601,21 +425,9 @@
         104,
         2
       ],
-      "M3XL_POSITION_32_1": [
+      "M3XL_POSITION_32": [
         106,
-        1
-      ],
-      "M3XL_POSITION_32_2": [
-        107,
-        1
-      ],
-      "M3XL_POSITION_32_3": [
-        108,
-        1
-      ],
-      "M3XL_POSITION_32_4": [
-        109,
-        1
+        4
       ],
       "M3XL_SPEED": [
         110,
@@ -645,21 +457,9 @@
         122,
         2
       ],
-      "M3XL_DESIRED_POSITION_32_1": [
+      "M3XL_DESIRED_POSITION_32": [
         124,
-        1
-      ],
-      "M3XL_DESIRED_POSITION_32_2": [
-        125,
-        1
-      ],
-      "M3XL_DESIRED_POSITION_32_3": [
-        126,
-        1
-      ],
-      "M3XL_DESIRED_POSITION_32_4": [
-        127,
-        1
+        4
       ],
       "M3XL_DESIRED_ACCEL": [
         128,

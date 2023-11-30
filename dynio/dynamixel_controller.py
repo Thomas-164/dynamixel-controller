@@ -350,26 +350,44 @@ class ThreeMxlMotor:
         return self.dxl_io.read_control_table(self.PROTOCOL, self.dxl_id, self.CONTROL_TABLE.get(data_name)[0],
                                               self.CONTROL_TABLE.get(data_name)[1])
 
-    def set_mode_position(self):
-        self.write_control_table("M3XL_CONTROL_MODE", 0)
+    # -- SET COMMANDS --
 
-    def set_mode_speed(self):
+    def set_velocity_mode(self):
         self.write_control_table("M3XL_CONTROL_MODE", 1)
 
-    def set_mode_current(self):
+    def set_position_mode(self):
+        self.write_control_table("M3XL_CONTROL_MODE", 0)
+
+    def set_current_mode(self):
         self.write_control_table("M3XL_CONTROL_MODE", 2)
 
-    def set_mode_toque(self):
+    def set_torque_mode(self):
         self.write_control_table("M3XL_CONTROL_MODE", 3)
 
-    def set_mode_sea(self):
+    def set_sea_mode(self):
+        # To be honest, I have no idea what this mode does.
         self.write_control_table("M3XL_CONTROL_MODE", 4)
 
-    def set_mode_pwm(self):
+    def set_stop_mode(self):
+        self.write_control_table("M3XL_CONTROL_MODE", 12)
+
+    def set_start_up_mode(self):
+        self.write_control_table("M3XL_CONTROL_MODE", 15)
+
+    def set_sinusoidal_position_mode(self):
+        self.write_control_table("M3XL_CONTROL_MODE", 16)
+
+    def set_test_mode(self):
+        self.write_control_table("M3XL_CONTROL_MODE", 17)
+
+    def set_pwm_mode(self):
         self.write_control_table("M3XL_CONTROL_MODE", 5)
 
-    def set_speed(self, speed):
-        self.write_control_table("M3XL_DESIRED_SPEED", speed * 100)
+    def set_velocity(self, velocity):
+        self.write_control_table("M3XL_DESIRED_SPEED", velocity)
+
+    def set_velocity_linear(self, velocity):
+        self.write_control_table("M3XL_DESIRED_LINEAR_SPEED", velocity)
 
     def set_acceleration(self, acceleration):
         self.write_control_table("M3XL_DESIRED_ACCEL", acceleration)
@@ -377,5 +395,59 @@ class ThreeMxlMotor:
     def set_acceleration_linear(self, acceleration):
         self.write_control_table("M3XL_DESIRED_LINEAR_ACCEL", acceleration)
 
-    def get_pos(self):
-        return self.read_control_table("M3XL_ANGLE_L")
+    def set_position(self, position):
+        self.write_control_table("M3XL_DESIRED_POSITION_32", position)
+
+    def set_angle(self, angle):
+        self.write_control_table("M3XL_DESIRED_ANGLE", angle)
+
+    def set_current(self, current):
+        self.write_control_table("M3XL_DESIRED_CURRENT", current)
+
+    def set_p_current(self, current):
+        self.write_control_table("M3XL_P_CURRENT", current)
+
+    def set_i_current(self, current):
+        self.write_control_table("M3XL_I_CURRENT", current)
+
+    def set_d_current(self, current):
+        self.write_control_table("M3XL_D_CURRENT", current)
+
+    def set_il_current(self, current):
+        self.write_control_table("M3XL_IL_CURRENT", current)
+
+    # -- GET COMMANDS --
+
+    def get_voltage(self):
+        return self.read_control_table("M3XL_VOLTAGE")
+
+    def get_current(self):
+        return self.read_control_table("M3XL_CURRENT")
+
+    def get_p_current(self):
+        return self.read_control_table("M3XL_P_CURRENT")
+
+    def get_i_current(self):
+        return self.read_control_table("M3XL_I_CURRENT")
+
+    def get_d_current(self):
+        return self.read_control_table("M3XL_D_CURRENT")
+
+    def get_il_current(self):
+        return self.read_control_table("M3XL_IL_CURRENT")
+
+    def get_torque(self):
+        return self.read_control_table("M3XL_TORQUE")
+
+    def get_angle(self):
+        return self.read_control_table("M3XL_ANGLE")
+
+    def get_angular_rate(self):
+        return self.read_control_table("M3XL_ANGULAR_RATE")
+
+    def get_position(self):
+        return self.read_control_table("M3XL_POSITION_32")
+
+    def get_velocity(self):
+        return self.read_control_table("M3XL_SPEED")
+

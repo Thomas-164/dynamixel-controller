@@ -1,31 +1,62 @@
 import time
+import numpy as np
 from dynio.dynamixel_controller import DynamixelIO
 
 dxl_io = DynamixelIO('COM3', 921600)
 
 motor = dxl_io.new_three_mxl_motor(106)
-motor.set_mode_speed()
-motor.set_acceleration(1000)
-
+motor.set_velocity_mode()
+motor.set_acceleration(5)
+motor.set_current(1)
 motor2 = dxl_io.new_three_mxl_motor(107)
-motor2.set_mode_speed()
-motor2.set_acceleration(1000)
+motor2.set_velocity_mode()
+motor2.set_acceleration(5)
+motor2.set_current(1)
 
+
+def get_status():
+    motor_status = {}
+    for motor_ in [motor, motor2]:
+        id_ = motor_.dxl_id
+        motor_status[id_] = {
+            'voltage': motor_.get_voltage(),
+            'current': motor_.get_current(),
+            'p current': motor_.get_p_current(),
+            'i current': motor_.get_i_current(),
+            'd current': motor_.get_d_current(),
+            'il current': motor_.get_il_current(),
+            'torque': motor_.get_torque(),
+            'angle': motor_.get_angle(),
+            'angular_rate': motor_.get_angular_rate(),
+            'position': motor_.get_position(),
+            'velocity': motor_.get_velocity(),
+        }
+
+    return motor_status
+
+
+x = 0
 while True:
+
+    if x == 11:
+        x = 0
+
     command = input("> ")
-    motor.set_speed(int(command))
-    motor2.set_speed(int(command))
+    if not command:
+        get_status()
+    else:
+        motor.set_velocity(int(command))
+        motor2.set_velocity(int(command))
 
+    # motor.set_velocity(x)
+    # motor2.set_velocity(x)
+    # time.sleep(2)
 
-# motor.set_speed_mode()
+    # status = get_status()
+    # for motor_ in status:
+    #     print(f"-- Motor {motor_} --")
+    #    for key, value in status[motor_].items():
+    #        print(f"{key}: {value}")
+    #    print()
 
-# motor.set_speed(1)
-
-# prev = motor.get_pos()
-
-# while True:
-#    time.sleep(1)
-#    pos = motor.get_pos()
-#    print(f'Pos: {pos}')
-#    print(f'Speed: {pos - prev}')
-#    prev = pos
+    # x += 1
