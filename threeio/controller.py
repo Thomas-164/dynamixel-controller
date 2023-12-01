@@ -19,7 +19,6 @@
 from dynamixel_sdk import *
 import json
 import pkg_resources
-from deprecation import deprecated
 import threading
 
 
@@ -86,7 +85,7 @@ class DynamixelIO:
         self.__check_error(protocol, dxl_comm_result, dxl_error)
         return ret_val
 
-    def new_3mxl_motor(self, dxl_id):
+    def new_motor(self, dxl_id):
         """Returns a new ThreeMxlMotor object of a given protocol with a given control table"""
         return ThreeMxlMotor(dxl_id, self,
                              pkg_resources.resource_filename(__name__, "control_table.json"))
