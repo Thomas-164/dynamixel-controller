@@ -1,0 +1,686 @@
+{
+  "Protocol_1": {
+    "Control_Table": {
+      "NO_INSTRUCTION": [
+        0,
+        1
+      ],
+      "PING": [
+        1,
+        1
+      ],
+      "READ_DATA": [
+        2,
+        1
+      ],
+      "WRITE_DATA": [
+        3,
+        1
+      ],
+      "REG_WRITE": [
+        4,
+        1
+      ],
+      "ACTION": [
+        5,
+        1
+      ],
+      "RESET": [
+        6,
+        1
+      ],
+      "SYNC_WRITE": [
+        131,
+        1
+      ],
+      "WRITE_MOTOR_PARAMS": [
+        160,
+        1
+      ],
+      "WRITE_JOINT_PARAMS": [
+        161,
+        1
+      ],
+      "WRITE_SEA_SETPOINTS": [
+        162,
+        1
+      ],
+      "SET_JOINT_TYPE": [
+        163,
+        1
+      ],
+      "BROADCAST_ID": [
+        254,
+        1
+      ],
+      "NORMAL_PACKET_TYPE": [
+        0,
+        1
+      ],
+      "BROADCAST_PACKET_TYPE": [
+        1,
+        1
+      ],
+      "M3XL_NO_ERROR": [
+        "0B00000000",
+        1
+      ],
+      "M3XL_INSTRUCTION_ERROR": [
+        "0B01000000",
+        1
+      ],
+      "M3XL_OVERLOAD_ERROR": [
+        "0B00100000",
+        1
+      ],
+      "M3XL_CHECKSUM_ERROR": [
+        "0B00010000",
+        1
+      ],
+      "M3XL_RANGE_ERROR": [
+        "0B00001000",
+        1
+      ],
+      "M3XL_OVERHEATING_ERROR": [
+        "0B00000100",
+        1
+      ],
+      "M3XL_ANGLE_LIMIT_ERROR": [
+        "0B00000010",
+        1
+      ],
+      "M3XL_INPUT_VOLTAGE_ERROR": [
+        "0B00000001",
+        1
+      ],
+      "M3XL_STATUS_EEPROM_ERROR": [
+        128,
+        1
+      ],
+      "M3XL_STATUS_NOT_INITIALIZED": [
+        129,
+        1
+      ],
+      "M3XL_STATUS_EM_STOP_ERROR": [
+        130,
+        1
+      ],
+      "M3XL_STATUS_INIT_TIME_OUT_ERROR": [
+        131,
+        1
+      ],
+      "M3XL_STATUS_MAX_POS_ERROR": [
+        132,
+        1
+      ],
+      "M3XL_STATUS_MAX_TORQUE_ERROR": [
+        133,
+        1
+      ],
+      "M3XL_STATUS_MAX_CURRENT_ERROR": [
+        134,
+        1
+      ],
+      "M3XL_STATUS_MOTOR_STUCK_ERROR": [
+        135,
+        1
+      ],
+      "M3XL_STATUS_JOINT_STUCK_ERROR": [
+        136,
+        1
+      ],
+      "M3XL_STATUS_PROTOCOL_TIME_OUT_ERROR": [
+        137,
+        1
+      ],
+      "M3XL_STATUS_MOVING": [
+        144,
+        1
+      ],
+      "M3XL_STATUS_MOVE_DONE": [
+        145,
+        1
+      ],
+      "M3XL_STATUS_INITIALIZE_BUSY": [
+        146,
+        1
+      ],
+      "M3XL_STATUS_INIT_DONE": [
+        147,
+        1
+      ],
+      "M3XL_STATUS_POS_MODE_EXECUTING": [
+        148,
+        1
+      ],
+      "M3XL_STATUS_POS_MODE_DONE": [
+        149,
+        1
+      ],
+      "M3XL_STATUS_SPEED_MODE_EXECUTING": [
+        150,
+        1
+      ],
+      "M3XL_STATUS_SPEED_MODE_DONE": [
+        151,
+        1
+      ],
+      "M3XL_STATUS_TORQUE_MODE_EXECUTING": [
+        152,
+        1
+      ],
+      "M3XL_STATUS_TORQUE_MODE_DONE": [
+        153,
+        1
+      ],
+      "M3XL_STATUS_CURRENT_MODE_EXECUTING": [
+        154,
+        1
+      ],
+      "M3XL_STATUS_CURRENT_MODE_DONE": [
+        155,
+        1
+      ],
+      "M3XL_STATUS_SEA_MODE_EXECUTING": [
+        156,
+        1
+      ],
+      "M3XL_STATUS_SEA_MODE_DONE": [
+        157,
+        1
+      ],
+      "M3XL_STATUS_PWM_MODE_EXECUTING": [
+        158,
+        1
+      ],
+      "M3XL_STATUS_PWM_MODE_DONE": [
+        159,
+        1
+      ],
+      "M3XL_STATUS_SINUSOIDAL_POS_MODE_EXECUTING": [
+        160,
+        1
+      ],
+      "M3XL_STATUS_SINUSOIDAL_POS_MODE_DONE": [
+        161,
+        1
+      ],
+      "M3XL_STATUS_IDLE_STATE": [
+        160,
+        1
+      ],
+      "M3XL_ACTION_BUSY": [
+        0,
+        1
+      ],
+      "M3XL_ACTION_DONE": [
+        255,
+        1
+      ],
+      "DEFAULT_3MXL_ID_1": [
+        100,
+        1
+      ],
+      "DEFAULT_3MXL_ID_2": [
+        101,
+        1
+      ],
+      "M3XL_STATUS_RETURN_NONE": [
+        0,
+        1
+      ],
+      "M3XL_STATUS_RETURN_READ_DATA": [
+        1,
+        1
+      ],
+      "M3XL_STATUS_RETURN_A": [
+        2,
+        2
+      ],
+      "JOINT_TYPE_WHE": [
+        1,
+        2
+      ],
+      "JOINT_TYPE_ARM": [
+        2,
+        1
+      ],
+      "JOINT_TYPE_GRIPPER": [
+        3,
+        1
+      ],
+      "JOINT_TYPE_DIRECTDRIVE": [
+        4,
+        1
+      ],
+      "JOINT_TYPE_SEA": [
+        5,
+        1
+      ],
+      "JOINT_TYPE_LINEAR": [
+        6,
+        1
+      ],
+      "JOINT_TYPE_PASSIVE": [
+        7,
+        1
+      ],
+      "JOINT_TYPE_UNKNOWN": [
+        10,
+        1
+      ],
+      "M3XL_MAX_MOTOR_CURRENT": [
+        40,
+        1
+      ],
+      "M_PI": [
+        3,
+        1
+      ],
+      "M3XL_JOINT_TYPE": [
+        0,
+        2
+      ],
+      "M3XL_VERSION_FIRMWARE": [
+        2,
+        1
+      ],
+      "M3XL_ID": [
+        3,
+        1
+      ],
+      "M3XL_STATUS_RETURN_LEV": [
+        16,
+        2
+      ],
+      "M3XL_BAUD_RATE": [
+        50,
+        2
+      ],
+      "M3XL_BAUD_RATE_M": [
+        51,
+        1
+      ],
+      "M3XL_RETURN_DELAY_TIME": [
+        53,
+        1
+      ],
+      "M3XL_CONTROL_MODE": [
+        54,
+        1
+      ],
+      "M3XL_WATCHDOG_MODE": [
+        55,
+        1
+      ],
+      "M3XL_WATCHDOG_TIME_MS": [
+        56,
+        1
+      ],
+      "M3XL_WATCHDOG_TIMER_M": [
+        57,
+        2
+      ],
+      "M3XL_MOTOR_CONSTANT": [
+        58,
+        2
+      ],
+      "M3XL_MAX_CONTINUOUS_MOTOR_CURRENT": [
+        60,
+        2
+      ],
+      "M3XL_MAX_MOTOR_PEAK_CURRENT": [
+        62,
+        2
+      ],
+      "M3XL_MOTOR_WINDING_TIME_CONSTANT": [
+        64,
+        2
+      ],
+      "M3XL_GEARBOX_RATIO_MOTOR": [
+        66,
+        2
+      ],
+      "M3XL_ENCODER_COUNT_MOTOR": [
+        68,
+        2
+      ],
+      "M3XL_OFFSET_MOTOR": [
+        70,
+        2
+      ],
+      "M3XL_MOTOR_ENC_DIRECTION": [
+        72,
+        1
+      ],
+      "M3XL_MOTOR_ENC_INDEX_LEV": [
+        73,
+        2
+      ],
+      "M3XL_CW_MOTOR_ANGLE_LIMIT": [
+        74,
+        2
+      ],
+      "M3XL_CCW_MOTOR_ANGLE_LIMIT": [
+        76,
+        2
+      ],
+      "M3XL_GEARBOX_RATIO_JOINT": [
+        78,
+        2
+      ],
+      "M3XL_ENCODER_COUNT_JOINT": [
+        80,
+        2
+      ],
+      "M3XL_OFFSET_JOINT": [
+        82,
+        2
+      ],
+      "M3XL_MAX_JOINT_TORQUE": [
+        84,
+        2
+      ],
+      "M3XL_CW_JOINT_ANGLE_LIMIT": [
+        86,
+        2
+      ],
+      "M3XL_CCW_JOINT_ANGLE_LIMIT": [
+        88,
+        2
+      ],
+      "M3XL_ZERO_LENGTH_SPRING": [
+        90,
+        2
+      ],
+      "M3XL_SPRING_STIFFNESS": [
+        92,
+        2
+      ],
+      "M3XL_JOINT_ENC_DIRECTION": [
+        94,
+        1
+      ],
+      "M3XL_JOINT_ENC_INDEX_LEV": [
+        95,
+        2
+      ],
+      "M3XL_VOLTAGE": [
+        96,
+        2
+      ],
+      "M3XL_CURRENT": [
+        98,
+        2
+      ],
+      "M3XL_TORQUE": [
+        100,
+        2
+      ],
+      "M3XL_ANGLE": [
+        102,
+        2
+      ],
+      "M3XL_ANGULAR_RATE": [
+        104,
+        2
+      ],
+      "M3XL_POSITION_32": [
+        106,
+        4
+      ],
+      "M3XL_SPEED": [
+        110,
+        2
+      ],
+      "M3XL_DESIRED_CURRENT": [
+        112,
+        2
+      ],
+      "M3XL_P_CURRENT": [
+        114,
+        2
+      ],
+      "M3XL_D_CURRENT": [
+        116,
+        2
+      ],
+      "M3XL_I_CURRENT": [
+        118,
+        2
+      ],
+      "M3XL_IL_CURRENT": [
+        120,
+        2
+      ],
+      "M3XL_PID_CURRENT_SCALE": [
+        122,
+        2
+      ],
+      "M3XL_DESIRED_POSITION_32": [
+        124,
+        4
+      ],
+      "M3XL_DESIRED_ACCEL": [
+        128,
+        2
+      ],
+      "M3XL_DESIRED_ANGLE": [
+        130,
+        2
+      ],
+      "M3XL_DESIRED_SPEED": [
+        132,
+        2
+      ],
+      "M3XL_DESIRED_TORQUE": [
+        134,
+        2
+      ],
+      "M3XL_P_POSITION": [
+        136,
+        2
+      ],
+      "M3XL_D_POSITION": [
+        138,
+        2
+      ],
+      "M3XL_I_POSITION": [
+        140,
+        2
+      ],
+      "M3XL_IL_POSITION": [
+        142,
+        2
+      ],
+      "M3XL_PID_POSITION_SCALE": [
+        144,
+        2
+      ],
+      "M3XL_P_SPEED": [
+        146,
+        2
+      ],
+      "M3XL_D_SPEED": [
+        148,
+        2
+      ],
+      "M3XL_I_SPEED": [
+        150,
+        2
+      ],
+      "M3XL_IL_SPEED": [
+        152,
+        2
+      ],
+      "M3XL_PID_SPEED_SCALE": [
+        154,
+        2
+      ],
+      "M3XL_P_TORQUE": [
+        156,
+        2
+      ],
+      "M3XL_D_TORQUE": [
+        158,
+        2
+      ],
+      "M3XL_I_TORQUE": [
+        160,
+        2
+      ],
+      "M3XL_IL_TORQUE": [
+        162,
+        2
+      ],
+      "M3XL_PID_TORQUE_SCALE": [
+        164,
+        2
+      ],
+      "M3XL_DESIRED_PWM": [
+        166,
+        2
+      ],
+      "M3XL_STATUS": [
+        168,
+        1
+      ],
+      "M3XL_INITIALIZED": [
+        169,
+        1
+      ],
+      "M3XL_STOP_PROTOCOL_HANDLER": [
+        170,
+        1
+      ],
+      "M3XL_DESIRED_LINEAR_SPEED": [
+        171,
+        2
+      ],
+      "M3XL_DESIRED_LINEAR_ACCEL": [
+        173,
+        2
+      ],
+      "M3XL_MAX_JERK": [
+        175,
+        2
+      ],
+      "LAST_MESSAGE_ADDRESS": [
+        177,
+        1
+      ],
+      "M3XL_WHEEL_DIAMETER": [
+        179,
+        2
+      ],
+      "M3XL_SINUSOIDAL_FREQUENCY": [
+        181,
+        2
+      ],
+      "M3XL_SINUSOIDAL_AMPLITUDE": [
+        183,
+        2
+      ],
+      "M3XL_SINUSOIDAL_PHASE_ANGLE": [
+        185,
+        2
+      ],
+      "M3XL_ACQUIRE_INDEX_POSITION": [
+        186,
+        1
+      ],
+      "M3XL_INDEX_POSITION_32_1": [
+        187,
+        1
+      ],
+      "M3XL_INDEX_POSITION_32_2": [
+        188,
+        1
+      ],
+      "M3XL_INDEX_POSITION_32_3": [
+        189,
+        1
+      ],
+      "M3XL_INDEX_POSITION_32_4": [
+        190,
+        1
+      ],
+      "M3XL_LOG_ARRAY_SIZE": [
+        500,
+        1
+      ],
+      "M3XL_NR_OF_BYTES_PER_SAMPLE": [
+        22,
+        1
+      ],
+      "M3XL_NR_OF_SAMPLES_PER_BLOCK": [
+        5,
+        1
+      ],
+      "M3XL_ENABLE_DATA_LOGGER": [
+        191,
+        1
+      ],
+      "M3XL_LOG_DATA_INTERV": [
+        192,
+        2
+      ],
+      "M3XL_DATA_LOGGER": [
+        193,
+        1
+      ],
+      "M3XL_BUS_VOLTAGE": [
+        194,
+        2
+      ],
+      "M3XL_MOTOR_CURRENT": [
+        196,
+        2
+      ],
+      "M3XL_ANA1_VOLTAGE": [
+        198,
+        2
+      ],
+      "M3XL_ANA2_VOLTAGE": [
+        200,
+        2
+      ],
+      "M3XL_ANA3_VOLTAGE": [
+        202,
+        2
+      ],
+      "M3XL_ANA4_VOLTAGE": [
+        204,
+        2
+      ],
+      "M3XL_SYNC_READ_INDEX": [
+        208,
+        1
+      ],
+      "M3XL_P_ENERGY": [
+        196,
+        2
+      ],
+      "M3XL_D_ENERGY": [
+        198,
+        2
+      ],
+      "M3XL_I_ENERGY": [
+        200,
+        2
+      ],
+      "M3XL_IL_ENERGY": [
+        202,
+        2
+      ],
+      "M3XL_PID_ENERGY_SCALE": [
+        204,
+        2
+      ],
+      "M3XL_REFERENCE_ENERGY": [
+        206,
+        2
+      ]
+    }
+  }
+}
